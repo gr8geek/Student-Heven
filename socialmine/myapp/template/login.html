@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    </head>
+    <body>
+        {% load static %}
+        
+        <div class="jumbotron jumbotron-fluid px-5" style="background-image: url('/media/pencil.jpg'); background-size:contain; color:#fff">
+            
+            <h1 class="display-4">New To Student Heven!</h1>
+            <p class="lead">The destination for every student to find study resources and Gain Advanced analytics from previous year Questions
+                <br>
+                Get AI based recommendations 
+                <br>
+                Mentor and Get Mentored for Projects
+                <br>
+                Store your notes in Organised Fashion and get Notes from senior Toppers 
+            </p>
+            <hr class="my-4">
+            <p>What are you waiting for?</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn More</a>
+            <button type="button" class = "btn btn-primary btn-lg mx-5" data-toggle="modal" data-target="#SignIn">Sign In</button>
+
+          </div>
+        <div class = "container">
+           
+            <form>
+                <div class="row form-group my-7%">
+                  <label for="exampleInputEmail1">User Name</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Remenber Me</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+              </form>
+        </div>
+        <div class="modal fade" id="SignIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Join The Heven</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+
+
+                <div class="modal-body">
+                    <form action="/myapp/sign/" method="post">{% csrf_token %}
+                        <div class = "form-group">
+                            <label for="name">Full Name</label>
+                            <input name = "name" class="form-control form-control-lg " id = "name" type="text" placeholder="Full Name">
+
+                        </div>
+
+                        <div class = "form-group">
+                            <label for="uname">Username</label>
+                            <input name="uname" class="form-control form-control-lg " id="uname" type="text" placeholder="Username">
+                        </div>
+                        <div class = "form-group">
+                            <label for="uname">Date Of Birth</label>
+                            <input name="dob" class="form-control form-control-lg " id="dob" type="date" placeholder="Username">
+                        </div>
+
+                        
+                        <div class = "form-group">
+                          <label for ="exampleRadios1">Gender</label>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="male" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                              Male
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="female" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                              Female
+                            </label>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input name = "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input name ="pass" type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">I accept the terms and conditions</label>
+                        </div>
+                        
+                        
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                      </form>
+                      
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
+</html>
